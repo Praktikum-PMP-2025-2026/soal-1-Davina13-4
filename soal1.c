@@ -38,7 +38,7 @@ int main() {
     while (1) {
         scanf("%d", &n);
         if (n == -1) {
-            return 1;  
+            break;  
         }
         arr = realloc(arr, (count + 1) * sizeof(int));
         arr[count] = n;
