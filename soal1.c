@@ -41,8 +41,8 @@ int main(){
     printf("\n"); 
 
    float median; 
-    if (count % 2 == 1) { // ini
-        median = arr[count / 2]; // ini untu
+    if (count % 2 == 1) {
+        median = arr[count / 2]; 
     } else {
         median = (arr[count / 2 - 1] + arr[count / 2]) / 2.0;
     }
