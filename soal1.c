@@ -9,46 +9,58 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int compare (const void *a, const void *b) {
-    return (*(int*)a - *(int*)b); 
+void sort(int *arr, int n) {
+    for (int i = 0; i < n - 1; i++) {
+        for (int j = 0; j < n - i - 1; j++) {
+            if (arr[j] > arr[j + 1]) {
+                int temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
+        }
+    }
 }
 
-int main(){
+float Median(int *arr, int n) {
+    if (n % 2 == 1) {
+        return arr[n / 2];
+    } else {
+        return (arr[n / 2 - 1] + arr[n / 2]) / 2.0;
+    }
+}
+
+int main() {
     int *arr = NULL;
     int count = 0;
     int n;
 
-    printf(""); /*Masukkan kecepatan angin hingga sinyal penghenti (-1)*/
-
-    while (scanf("%d", &n) && n != -1) {
-        arr = realloc(arr, (count + 1) * sizeof(int)); 
-        if (arr == NULL) {
-            return 1;
+    printf("");
+    while (1) {
+        scanf("%d", &n);
+        if (n == -1) {
+            return 1;  
         }
-        arr[count++] = n;
-    }
-    if (count == 0){
-        return 1;
+        arr = realloc(arr, (count + 1) * sizeof(int));
+        arr[count] = n;
+        count++;
     }
 
-    qsort(arr, count, sizeof(int), compare); 
+    if (count == 0) {
+        return 0;
+    }
 
-    printf("COUNT %d ", count);
-    printf("SORTED");
+    sort(arr, count);
+
+    printf("COUNT %d", count);
+    printf(" SORTED");
     for (int i = 0; i < count; i++) {
         printf(" %d", arr[i]);
     }
-
-   float median; 
-    if (count % 2 == 1) { 
-        median = arr[count / 2]; 
-    } else {
-        median = (arr[count / 2 - 1] + arr[count / 2]) / 2.0; 
-    }
-    
-    printf(" MEDIAN %.0f", median);
+    printf(" MEDIAN %.2f", Median(arr, count));
 
     free(arr);
 
     return 0;
 }
+
+
