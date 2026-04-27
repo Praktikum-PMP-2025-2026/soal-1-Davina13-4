@@ -39,15 +39,16 @@ int main(){
         printf(" %d", arr[i]);
     }
 
-    double median; 
+  float median; 
     if (count % 2 == 1) { 
         median = arr[count / 2]; 
+        printf(" MEDIAN %0.f", median);
     } 
     else {
-        median = (arr[count / 2 - 1] + arr[count / 2]) / 2.0; 
+       median = (arr[count / 2 - 1] + arr[count / 2]) / 2.0; 
+       printf(" MEDIAN %.2f", median);
     }
     
-    printf(" MEDIAN %.0f", median);
 
     free(arr);
 
