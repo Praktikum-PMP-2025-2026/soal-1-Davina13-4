@@ -31,25 +31,25 @@ int main(){
         return 1;
     }
 
-    qsort(arr, count, sizeof(int), compare);
+    qsort(arr, count, sizeof(int), compare); 
 
-    printf("COUNT %d\n", count);
+    printf("COUNT%d\n", count);
     printf("SORTED");
     for (int i = 0; i < count; i++) {
         printf(" %d", arr[i]);
     }
     printf("\n"); 
 
-    float median;
-    if (count % 2 == 1){
-        median = arr[count / 2];
-    }
-    else{
+   float median; 
+    if (count % 2 == 1) { // ini
+        median = arr[count / 2]; // ini untu
+    } else {
         median = (arr[count / 2 - 1] + arr[count / 2]) / 2.0;
     }
-
-    printf("MEDIAN %.2f", median);
+    
+    printf("MEDIAN %.2f\n", median);
 
     free(arr);
+    
     return 0;
-}    
+}
