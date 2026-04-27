@@ -46,7 +46,7 @@ int main(){
         median = (arr[count / 2 - 1] + arr[count / 2]) / 2.0; 
     }
     
-    printf("MEDIAN %.2f", median);
+    printf("MEDIAN %.0f", median);
 
     free(arr);
 
