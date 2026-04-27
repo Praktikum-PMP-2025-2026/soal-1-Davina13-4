@@ -18,7 +18,7 @@ int main(){
     int count = 0;
     int n;
 
-    printf("Masukkan kecepatan angin hingga sinyal penghenti (-1): ");
+    printf(" "); /*Masukkan kecepatan angin hingga sinyal penghenti (-1)*/
 
     while (scanf("%d", &n) && n != -1) {
         arr = realloc(arr, (count + 1) * sizeof(int)); 
@@ -38,7 +38,6 @@ int main(){
     for (int i = 0; i < count; i++) {
         printf(" %d", arr[i]);
     }
-    printf("\n"); 
 
     float median;
     if (count % 2 == 1){
@@ -48,7 +47,7 @@ int main(){
         median = (arr[count / 2 - 1] + arr[count / 2]) / 2.0;
     }
 
-    printf("MEDIAN %.2f\n", median);
+    printf("MEDIAN %.2f", median);
 
     free(arr);
     return 0;
