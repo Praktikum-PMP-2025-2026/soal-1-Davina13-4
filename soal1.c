@@ -36,7 +36,7 @@ int main(){
     printf("COUNT %d ", count);
     printf("SORTED");
     for (int i = 0; i < count; i++) {
-        printf(" %d ", arr[i]);
+        printf(" %d", arr[i]);
     }
 
    float median; 
@@ -46,7 +46,7 @@ int main(){
         median = (arr[count / 2 - 1] + arr[count / 2]) / 2.0; 
     }
     
-    printf("MEDIAN %.0f", median);
+    printf(" MEDIAN %.0f", median);
 
     free(arr);
 
