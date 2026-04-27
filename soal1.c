@@ -33,10 +33,10 @@ int main(){
 
     qsort(arr, count, sizeof(int), compare); 
 
-    printf("COUNT %d", count);
+    printf("COUNT %d ", count);
     printf("SORTED");
     for (int i = 0; i < count; i++) {
-        printf(" %d", arr[i]);
+        printf(" %d ", arr[i]);
     }
 
    float median; 
