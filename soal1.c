@@ -33,23 +33,22 @@ int main(){
 
     qsort(arr, count, sizeof(int), compare); 
 
-    printf("COUNT%d\n", count);
+    printf("COUNT%d", count);
     printf("SORTED");
     for (int i = 0; i < count; i++) {
         printf(" %d", arr[i]);
     }
-    printf("\n"); 
 
    float median; 
-    if (count % 2 == 1) {
+    if (count % 2 == 1) { 
         median = arr[count / 2]; 
     } else {
         median = (arr[count / 2 - 1] + arr[count / 2]) / 2.0;
     }
     
-    printf("MEDIAN %.2f\n", median);
+    printf("MEDIAN %.2f", median);
 
     free(arr);
-    
+
     return 0;
 }
